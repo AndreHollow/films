@@ -1,0 +1,19 @@
+.sort-container{
+  width: 10vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 10px;
+}
+
+.checkbox-text{
+  font-size: 1.1em;
+}
+
+
+.checkbox{
+  height: 30px;
+  width: 30px;
+  margin: 5px;
+  cursor: pointer;
+}

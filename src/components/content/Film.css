@@ -1,0 +1,90 @@
+.filmlist-container{
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.film{
+  width: 80vw;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  background-color: #192a51;
+  color: #f5e6e8;
+  margin-top: 15px;
+  border-radius: 10px;
+}
+
+.delete-film{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #f5e6e8;
+  border-radius: 5px;
+  background-color: #192a51;
+  margin: 0 5px;
+  outline: 0;
+  cursor: pointer;
+  width: 100px;
+  height: 30px;
+  color: #f5e6e8;
+  font-weight: inherit;
+  font-size: inherit;
+}
+
+.burger1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #f5e6e8;
+  border-radius: 5px;
+  background-color: #192a51;
+  margin: 0 5px;
+  outline: 0;
+  cursor: pointer;
+  width: 100px;
+  height: 30px;;
+}
+
+.burger1::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+.burger-check1 {
+  display: none;
+}
+
+.burger-check1:checked ~ .burger1:before {
+  transform: rotate(-405deg) translateY(1px) translateX(-3px);
+  -webkit-transform: rotate(-405deg) translateY(1px) translateX(-3px);
+  transition: transform 0.5s ease-in-out;
+  -webkit-transition: -webkit-transform 0.5s ease-in-out;
+}
+.burger-check1:checked ~ .burger1:after {
+  transform: rotate(405deg) translateY(-4px) translateX(-5px);
+  -webkit-transform: rotate(405deg) translateY(-4px) translateX(-5px);
+  transition: transform 0.5s ease-in-out;
+  -webkit-transition: -webkit-transform 0.5s ease-in-out;
+}
+
+.show-more {
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.5s ease-in-out;
+  border-radius: 5px;
+  margin-bottom: 2px;
+  color: #192a51;
+  min-width: 75vw;
+}
+
+.burger-check1:checked ~ .show-more {
+  max-width: 800px;
+  background-color: #f5e6e8;
+
+  max-height: 500px;
+  transition: max-height 0.5s ease-in-out;
+}

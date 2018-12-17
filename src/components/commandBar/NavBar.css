@@ -1,0 +1,28 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  width: 100vw;
+  background-color: #f5e6e8;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#root{
+  display: flex;
+}
+
+.nav-menu{
+  width: 100vw;
+  height: 16vh;
+  position: sticky;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  background-color: #192a51;
+  color: #f5e6e8;
+}
