@@ -2,15 +2,20 @@ import React from 'react'
 import {connect} from 'react-redux'
 import {deleteFilm} from '../actions'
 
-let RemoveFilm = ({id, dispatch}) => {
+const RemoveFilm = ({id, dispatch}) => {
+  const handleClick = e => {
+    e.preventDefault();
+    dispatch(deleteFilm(id));
+  }
+
   return (
       <div>
-        <button className = 'delete-film' onClick={e => {
-          e.preventDefault();
-          dispatch(deleteFilm(id));
-
-          console.log(dispatch(deleteFilm(id)));
-        }}>Remove film</button>
+        <button 
+          className = 'delete-film' 
+          onClick={handleClick}
+          >
+          Remove film
+        </button>
       </div>
   )
 }
