@@ -9,6 +9,4 @@ const navigation = (state={isSorted: false, searchData: '', isTitle: true}, acti
   }
 }
 
-
-
 export default navigation
