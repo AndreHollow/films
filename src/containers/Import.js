@@ -23,6 +23,7 @@ const parseFileToArray = (stringFromFile) => {
       objFull = {};
     } 
 
+    return null;
   });
 
   return parsedArray
@@ -38,6 +39,8 @@ const addToGlobalState = (parsedArray) => {
     store.dispatch(
       addFilm(obj.title, year, format, stars.split(', '))
     )
+
+    return null;
   })
 }
 
@@ -67,13 +70,6 @@ class Import extends Component {
       isFileChosen: document.getElementById('file').value !== '' ? true : false
     })
   }
-
-    /*
-    <form onSubmit={
-        РАЗОБРАТЬСЯ КАК ВЫТАЩИТЬ ИЗ ФАЙЛА СТРОКУ А ПОТОМ ПАРСИТЬ ЕЁ ЧЕРЕЗ СПЛИТЫ, ПОСМОТРЕТЬ ЧТО ПИСАЛ ЮЗЕРНЕЙМ И БОГДАН
-
-      }
-      */
 
   render() {
     return (
