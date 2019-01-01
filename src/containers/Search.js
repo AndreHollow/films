@@ -38,17 +38,17 @@ class Search extends React.Component{
       return
     else{
       if(!this.state.titleChosen){
-        console.log(store.dispatch(searchConfirm(this.state.searchData.toLowerCase(), this.state.titleChosen)))
+        store.dispatch(searchConfirm(this.state.searchData.toLowerCase(), this.state.titleChosen))
       }
       if(!this.state.actorsChosen){
-        console.log(store.dispatch(searchConfirm(this.state.searchData.toLowerCase(), this.state.titleChosen)))
+        store.dispatch(searchConfirm(this.state.searchData.toLowerCase(), this.state.titleChosen))
       }
     }
   }
 
   render(){
     return(
-        <form className = 'search-form-container'  onSubmit = {this.handleSubmit}>
+        <form className = 'search-form-container' onSubmit = {this.handleSubmit}>
           <div 
             className = 'toogle-option'
             style = {{
@@ -87,7 +87,7 @@ class Search extends React.Component{
               type='text' 
               className = 'search-field'
               ref={this.searchInput} 
-              onChange = {() => this.handleSearchChange()}
+              onChange = {this.handleSearchChange}
               />
             <div className = 'error-message'>{this.state.errorMessage}</div>
           </div>
