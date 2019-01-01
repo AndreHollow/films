@@ -5,8 +5,18 @@ import './Film.css'
 const Film = ({onClick, id, title, year, format, stars, toggled}) => (
   <li className = 'film'>
     <div> {title} </div>
-    <input className="burger-check1" id="burger-check1" type="checkbox" checked = {toggled ? true : null} />
-    <label htmlFor="burger-check1" className="burger1" onClick={onClick}>Show more</label>
+    <input 
+      className="burger-check1" 
+      id="burger-check1" 
+      type="checkbox" 
+      checked = {toggled} />
+    <label 
+      htmlFor="burger-check1" 
+      className="burger1" 
+      onClick={onClick}
+      >
+      Show more
+    </label>
     
     <DeleteFilm id = {id} />
     <div 
