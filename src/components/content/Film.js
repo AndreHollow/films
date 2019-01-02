@@ -10,7 +10,9 @@ const Film = ({onClick, id, title, year, format, stars, toggled}) => (
       className="burger-check1" 
       id="burger-check1" 
       type="checkbox" 
-      checked = {toggled} />
+      checked = {toggled} 
+      readOnly 
+      />
     <label 
       htmlFor="burger-check1" 
       className="burger1" 
