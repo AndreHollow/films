@@ -1,5 +1,6 @@
 import React from 'react'
 import Film from './Film'
+import PropTypes from 'prop-types'
 
 const FilmsList = ({ films, searchData, isTitle, isSorted, toggleFilm }) => {
   let filmsFinal;
@@ -45,6 +46,23 @@ const FilmsList = ({ films, searchData, isTitle, isSorted, toggleFilm }) => {
         }
       </ul>
     ) 
+}
+
+FilmsList.propTypes = {
+  films: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      title: PropTypes.string.isRequired,
+      year: PropTypes.string.isRequired,
+      format: PropTypes.string.isRequired,
+      stars: PropTypes.arrayOf(PropTypes.string).isRequired,
+      toggled: PropTypes.bool.isRequired
+    }).isRequired
+  ).isRequired,
+  searchData: PropTypes.string.isRequired,
+  isTitle: PropTypes.bool.isRequired,
+  isSorted: PropTypes.bool.isRequired,
+  toggleFilm: PropTypes.func.isRequired
 }
 
 export default FilmsList
