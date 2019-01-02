@@ -1,6 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { toggleSorting } from '../actions'
+import PropTypes from 'prop-types'
 import './SortButton.css'
 
 const SortBox = ({isSorted, dispatch}) => {
@@ -23,5 +24,9 @@ const SortBox = ({isSorted, dispatch}) => {
 const mapStateToProps = state => ({
   isSorted: state.navigation.isSorted
 })
+
+SortBox.propTypes = {
+  isSorted: PropTypes.bool.isRequired
+}
 
 export default connect(mapStateToProps)(SortBox)
