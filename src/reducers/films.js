@@ -1,4 +1,4 @@
-const films = (state = [
+const DEFAULT_FILMS = [
   {
     id: 0,
     title: 'Star Wars: Redux invasion',
@@ -15,7 +15,9 @@ const films = (state = [
     stars: ['Baal theDemonLord', 'Abbadon', 'Lucifer the King'],
     toggled: false
   }
-], action) => {
+];
+
+const films = (state = DEFAULT_FILMS, action) => {
   switch (action.type) {
     case 'ADD_FILM':
       return [
