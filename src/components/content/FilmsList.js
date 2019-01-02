@@ -3,35 +3,25 @@ import Film from './Film'
 
 const FilmsList = ({ films, searchData, isTitle, isSorted, toggleFilm }) => {
   let filmsFinal;
-  if(isTitle){
-    if(searchData){
-      if(!isTitle){
-        filmsFinal = films.filter(film => film.stars.map(star => star.toLowerCase().includes(searchData)).some(result => result))
-      }
-      else{
-        filmsFinal = films.filter(film => film.title.toLowerCase().includes(searchData))
-      }
-    }
+  
+  if(searchData){
+    if(!isTitle)
+      filmsFinal = films.filter(film => film.stars.map(star => star.toLowerCase().includes(searchData)).some(result => result))
     else
-      filmsFinal = films;
+      filmsFinal = films.filter(film => film.title.toLowerCase().includes(searchData))
   }
-  else{
-    if(searchData){
-      if(!isTitle){
-        filmsFinal = films.filter(film => film.stars.map(star => star.toLowerCase().includes(searchData)).some(result => result))
-      }
-      else{
-        filmsFinal = films.filter(film => film.title.toLowerCase().includes(searchData))
-      }
-    }
-    else
-      filmsFinal = films;
+  else
+    filmsFinal = films;
+
+  if(filmsFinal.length === 0){
+    return (
+      <ul className = 'filmlist-container'>
+        <li className = 'nothing-here'>There is nothing here</li>
+      </ul>
+    )
   }
 
-  if(filmsFinal.length === 0)
-    filmsFinal = 'There is nothing here'
-
-  if(isSorted && Array.isArray(filmsFinal)){
+  if(isSorted)
     return (
       <ul className = 'filmlist-container'>
         {
@@ -43,8 +33,7 @@ const FilmsList = ({ films, searchData, isTitle, isSorted, toggleFilm }) => {
         }
       </ul>
     ) 
-  }
-  else if(!isSorted && Array.isArray(filmsFinal))
+  else if(!isSorted)
     return (
       <ul className = 'filmlist-container'>
         {
@@ -56,12 +45,6 @@ const FilmsList = ({ films, searchData, isTitle, isSorted, toggleFilm }) => {
         }
       </ul>
     ) 
-  else 
-    return(
-      <ul className = 'filmlist-container'>
-        <li className = 'nothing-here'>{filmsFinal}</li>
-      </ul>
-    )
 }
 
 export default FilmsList
