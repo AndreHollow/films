@@ -1,14 +1,14 @@
 # films
 
-Для запуска на локальной машине требуется:
-1. Создать проект через npx create-react-app
-2. Удалить папки public и src 
-3. Скачать проект с github
-4. Вставить со скачаного проекта в созданый папки public и src 
-5. Установить через npm/yarn зависимости указанные в package.json
-6. Запускать через npm start
+In order to deploy the project on the local machine follow the steps provided below.
 
+First of all, you need node.js and npm installed on your computer, in case you don’t have them – check this guide: https://www.npmjs.com/get-npm
 
-Архитектура проекта находится в корневой папке проекта, под названием arch.jpg
+1. Clone repository( $ git clone https://github.com/AndreHollow/films.git ) or download the project
+2. Run console/terminal in the project folder ( $ cd films)
+3. To get all necessary modules use command $ npm i
+4. To start the local server use command $ npm start
 
-Ссылка на онлайн просмотр: https://andrehollow.github.io/films/
+The project architecture can be found in the root folder of the project, it's called arch.jpg
+
+Check it online: https://andrehollow.github.io/films/
